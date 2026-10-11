@@ -1,0 +1,53 @@
+classDiagram
+  direction RL
+
+  class Magasin {
+    +str nom
+    +str ville
+  }
+  class SiteInternet {
+    +str url
+  }
+  class SecteurActivite {
+    +str nom
+    +montant_total() float
+  }
+  class Rayon {
+    +str code
+    +str nom
+    +montant_total() float
+  }
+  class Produit {
+    +str code
+    +str libelle
+    +float prix
+  }
+  class Vendeur {
+    +str nom
+    +str prenom
+    +str tel
+    +str email
+    +date prise_fonction
+    +int indice_salaire
+    +montant_total() float
+    +fiche_signaletique() str
+  }
+  class Client {
+    +str nom
+    +montant_moyen_achat() float
+  }
+  class Achat {
+    +int quantite
+    +datetime date
+    +montant() float
+  }
+
+  Magasin  --> "1" SiteInternet : site_internet
+  Magasin  --> "1..*" SecteurActivite : secteurs
+  SecteurActivite  --> "1..*" Rayon : rayons
+  SecteurActivite  --> "1..*" Vendeur : vendeurs
+  Vendeur  --> "1" Rayon : rayon
+  Vendeur  --> "1" SecteurActivite : responsable
+  Rayon    --> "1..*" Produit : produits
+  Client  --> "1..*" Achat : achats
+  Achat  --> "1" Produit : produit

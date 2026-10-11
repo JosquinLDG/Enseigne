@@ -1,0 +1,17 @@
+sequenceDiagram
+  actor Directeur
+  participant Enseigne
+
+  Directeur->>+Enseigne: Authentification
+  alt Identifiants valides
+      Enseigne-->>Directeur: OK (Connexion réussie)
+  else Identifiants invalides
+      Enseigne-->>Directeur: Erreur (Accès refusé)
+  end
+  Enseigne-->>-Directeur: Fin de traitement
+
+  Directeur->>+Enseigne: MontantVendeur
+  Enseigne-->>-Directeur: ListVendeur
+
+  Directeur->>+Enseigne: SelectionVendeur
+  Enseigne-->>-Directeur: MontantDuVendeur

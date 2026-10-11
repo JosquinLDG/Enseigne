@@ -31,6 +31,23 @@ Aprés avoir fait les etapes détaillé ci-dessus exécuter la commande suivante
 enseigne
 ```
 
+# Affichage des diagrammes UML
+
+Les diagrammes UML sont écrits dans le langage [Mermaid](https://mermaid.js.org/intro/). 
+
+Pour les visualiser directement dans votre navigateur à l'aide du script de documentation, vous pouvez exécuter les commandes suivantes dans votre console :
+
+```bash
+# Afficher le diagramme de classe
+python3 ./doc/mermaid.py ./doc/class.mmd
+
+# Afficher le diagramme de cas d'utilisation
+python3 ./doc/mermaid.py ./doc/use_case.mmd
+
+# Afficher le diagramme de séquence
+python3 ./doc/mermaid.py ./doc/sequence.mmd
+```
+
 ## Structure du projet
 ```text
 Enseigne/

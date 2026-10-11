@@ -1,0 +1,15 @@
+usecase-beta
+direction LR
+actor Vendeur("Vendeur")
+actor Directeur("Directeur")
+systemBoundary sb1["Enseigne"]@{ type: package }:::system
+    ConsulterMontantClientMoyen("Consulter le montant client moyen")
+    ConsulterMontantVendeur("Consulter le montant vendeur")
+    ImprimerVendeur("Imprimer le rapport vendeur")
+    ConsulterMontantRayonActivite("Consulter le montant rayon d'activité")
+end
+Vendeur --> ConsulterMontantVendeur
+Directeur --> ConsulterMontantVendeur
+Directeur --> ConsulterMontantClientMoyen
+Directeur --> ImprimerVendeur
+Directeur --> ConsulterMontantRayonActivite
